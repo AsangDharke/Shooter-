@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+  <head>
+    <title> A BASIC GAME </title>
+    <script src = 'js/gameScript.js' defer> </script>
+    <style>
+        #Dir_controls{
+          padding-left: 30%;
+        }
+        .strong { font-weight: bold;}
+        .stronger {font-weight: bold; 
+                  font-size: 24pt; }
+
+        .info {border: 1px solid rgb(190, 174, 121); 
+                border-bottom-left-radius: 3px; 
+                border-bottom-right-radius: 3px; 
+                background-color: rgba(135, 179, 115, 0.699); 
+                text-align: center; 
+                color: rgb(255, 41, 41); 
+                width: 8cm; }
+    </style>
+  </head>
+
+  <body>
+    <canvas id = 'GameCanvas'>
+    </canvas>
+    <button id = 'play'> Play </button>
+    <p>
+      <section id = 'keynotes'>
+      <p class = 'info'> Reload the Page to Restart the Game if you encounter problems like the first wall not leaving enough spaces<br> 
+            Will address the bug in the next update. </p> 
+        </section>
+      </p>
+        <h4> Defined Controls </h4>
+        <span class = 'strong'> W </span> Control Player Up <br>
+        <span class = 'strong'> A </span> Control Player Left <br>
+        <span class = 'strong'> S </span> Control Player Down <br>
+        <span class = 'strong'> D </span> Control Player Right <br>
+        <span class = 'stronger'> I </span> Throw Ball Bullet <br> 
+     
+    <p id = 'test'>
+    <button id = 'acc' onmousedown='accmovement(-0.2)' onmouseup = 'accmovement(0.09)'> Move </button>
+    </p>
+    <!-- Enable the script below to enable gravity movements. also do same for
+    the movement funtion in the external script --> 
+    <!-- <script>
+    var accmovement = function(n) {
+      myPlayer.gravity = n;
+    }
+    </script> -->
+  </body>
+
+</html>
