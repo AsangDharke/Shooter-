@@ -26,10 +26,10 @@ function startGame(){
    myBackground = new component('Image', 656, 300, "images/Background.png", 0, 0);
   //  mystartSound = new sound("audio/Secure the Artifact.mp3");
    myMusic = new sound("audio/Music.mp3");
-   hit = new sound('audio/perfect hit.mp3'); 
-   shot = new sound('audio/throw.mp3'); 
+   hit = new sound('audio/perfect hit.mp3');
+   shot = new sound('audio/throw.mp3');
    myMusic.play();
-  //  mystartSound.play(); 
+  //  mystartSound.play();
 } // end startGame.
 
 
@@ -168,7 +168,7 @@ function component(type, width, height, color, x, y)
   }
 
   if(this.type == "Image") {
-    // javascript has an inbuilt image object. 
+    // javascript has an inbuilt image object.
     this.image = new Image();
     this.image.src = color;
   }
@@ -182,10 +182,10 @@ function component(type, width, height, color, x, y)
       this.y,
       this.width, this.height);
     }
-    // this is setting the default speed, it'll be easier to make an enemy component and 
+    // this is setting the default speed, it'll be easier to make an enemy component and
     // set a parameter for it's defined speed, but this one is practical purposes, we'll get
-    // more professional with time. 
-    this.speedX = 1; 
+    // more professional with time.
+    this.speedX = 1;
 
     this.movement = function()
     {
@@ -215,9 +215,9 @@ function component(type, width, height, color, x, y)
       this.speedY = 0;
     }
 
-    // giving speed to the created object by using this method. 
+    // giving speed to the created object by using this method.
     this.giveSpeed = function() {
-      this.speedX = 1.5; 
+      this.speedX = 1.5;
     }
 
     this.crashWith = function(otherobj) {
@@ -238,32 +238,32 @@ function component(type, width, height, color, x, y)
             (myright < otherleft) ||
             (myleft > otherright)) {
               crash = false;
-            } 
+            }
             return crash;
     }
     this.is_alive = function() {
       if(this.speedX > 0)
-        return true; 
+        return true;
         else
-          return false; 
+          return false;
     }
 
-    // this is the method for image explosion, a property of the component object. 
+    // this is the method for image explosion, a property of the component object.
     this.particleExplosion = function(obj){
-      var idx = 1; 
-      var explosion = setInterval(scatter, 200); 
+      var idx = 1;
+      var explosion = setInterval(scatter, 200);
           function scatter () {
           if (idx > 3)
           {
-            obj.image.src = ''; 
-            idx = 1; 
+            obj.image.src = '';
+            idx = 1;
             clearInterval(explosion);
-          }     
+          }
           else
           {
             var source = 'images/pframe' + idx + '.png';
             obj.image.src = source;
-            idx++;  
+            idx++;
           }
       }
     }
@@ -314,7 +314,7 @@ function updateGameArea(){
     maxHeight = myGameArea.scene.height;
     minHeight = 30;
     height = Math.floor(Math.random() * (maxHeight - minHeight) + minHeight );
-    myEnemies.push(new component('Image', 42,34,'images/ghoul.png', x, height)); 
+    myEnemies.push(new component('Image', 42,34,'images/ghoul.png', x, height));
   }
 
   var i, size, wave;
@@ -347,11 +347,11 @@ function updateGameArea(){
     {
       if(myEnemies[i].is_alive())
       {
-        hit.play();  
+        hit.play();
         myEnemies[i].x+=3;
         myEnemies[i].speedX = 0;
-        // bullet.speedX = 0; 
-        myEnemies[i].particleExplosion(myEnemies[i]); 
+        // bullet.speedX = 0;
+        myEnemies[i].particleExplosion(myEnemies[i]);
       }
     }
   }
@@ -384,12 +384,12 @@ function updateGameArea(){
     }
     // condition for the Shot Key(i).
   if(myGameArea.key && myGameArea.key == 105 ) {
-          shot.play(); 
+          shot.play();
           bullet.speedX = 15;
           if(bullet.x > myGameArea.scene.width)
-              bullet = new component("Image", 20,20, 'images/throw.png', myPlayer.x, myPlayer.y);      
+              bullet = new component("Image", 20,20, 'images/throw.png', myPlayer.x, myPlayer.y);
     }
-    
+
     bullet.movement();
     bullet.update();
     myPlayer.movement();
@@ -430,7 +430,7 @@ function updateGameArea(){
 
   for(i = 0; i < wave; i++) {
     if(myEnemies[i].is_alive())
-        myEnemies[i].giveSpeed(); 
+        myEnemies[i].giveSpeed();
   }
 
   // moving the array of enemies and updating them to keep them on view per interval.
