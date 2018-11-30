@@ -15,6 +15,7 @@ body{
   font-size:120%;
   color:white;
   background-color:black;
+  font-family:lobster;
 
 
 }
@@ -29,11 +30,12 @@ body{
 
 }
 #CanvasSection{
-
+  margin:-50px;
 
 }
 #keynotes{
   width:50%;
   float:left;
   height:auto;
+  margin:auto;
 }
