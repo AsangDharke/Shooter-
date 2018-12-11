@@ -1,0 +1,41 @@
+#Dir_controls{
+padding-left: 30%;
+}
+.strong {
+font-weight: bold;
+color:#ff0000;
+font-size:125%;
+}
+.info {
+ border:2px solid red ;
+ padding:10px;
+}
+body{
+  padding:10px;
+  font-size:120%;
+  color:white;
+  background-color:black;
+  font-family:lobster;
+
+
+}
+.control-button{
+  font-size:120%;
+  padding:1%;
+  width:20%;
+  color:white;
+  border-radius:10px;
+  border:1px solid black;
+  background-color:#ff0000;
+
+}
+#CanvasSection{
+  margin:-50px;
+
+}
+#keynotes{
+  width:50%;
+  float:left;
+  height:auto;
+  margin:auto;
+}
